@@ -22,7 +22,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path="/create-set" element={<CreateSet exportData={fetchData}/>} />
+          <Route path="/" element={<CreateSet exportData={fetchData}/>} />
           <Route path="/learn" element={<Learn data={data}/>} />
         </Routes>
       </Router>

@@ -16,8 +16,6 @@ body {
   font-size: 24px;
   margin-top: 30vh;
   user-select: none;
-  perspective: 1000px;
-  border: 1px solid black;
 }
 
 .flip-card-inner {
@@ -96,6 +94,15 @@ label{
   margin: 0px;
 }
 
+.titleinput:focus::placeholder {
+  visibility: hidden;
+}
+
+.titleinput:focus ~ #line { 
+  border: 1px solid rgba(255, 255, 255, 1); 
+  width: 70%;
+}
+
 .titleinput::placeholder {
   font-family: "Outfit";
   color: rgba(255, 255, 255, 0.524);
@@ -105,12 +112,12 @@ label{
   width: 80vw;
   display: flex;
   flex-direction: column;
-
 }
 
 .create-set hr {
-  width: 50%;
+  width: 40%;
   border: 1px solid rgba(255, 255, 255, 0.524);
+  transition: 1s;
 }
 
 .create-set-container {
@@ -179,4 +186,58 @@ label{
   font-size: 24px;
   color: rgba(255, 255, 255, 0.5);
   user-select: none;
+}
+
+.move-right-arrow {
+  animation-name: move-right-arrow;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes move-right-arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20vw);
+    opacity: 0;
+  }
+  50.001% {
+    transform: translateX(100vw);
+  }
+  50.002% {
+    transform: translateX(20vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.move-left-arrow {
+  animation-name: move-left-arrow;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes move-left-arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20vw);
+    opacity: 0;
+  }
+  50.001% {
+    transform: translateX(-100vw);
+  }
+  50.002% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

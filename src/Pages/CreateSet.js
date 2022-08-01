@@ -40,7 +40,7 @@ const CreateSet = ({exportData}) => {
         <div className='create-set-container create-set '>
             <form onSubmit={submit}>
             <input type='text' className='titleinput input form-row' id="title" placeholder='ENTER QUIZ NAME'/>
-            <hr/>
+            <hr id='line'/>
             {formFields.map((form, index) => {
             return (
                 <div key={index} className='form-row'>
