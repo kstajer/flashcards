@@ -10,6 +10,7 @@ function App() {
 
   const [data, setData] = useState();
 
+
   const fetchData = (d) => {
     let shuffled = d
     .map(value => ({ value, sort: Math.random() }))
@@ -17,6 +18,7 @@ function App() {
     .map(({ value }) => value)
     setData(shuffled);
   }
+
 
   return (
     <div>
